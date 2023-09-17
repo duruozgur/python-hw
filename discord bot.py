@@ -32,6 +32,8 @@ async def tokenn(ctx):
     idk = input("so you got the token?")
     if idk == "yes":
         print("congrats :D")
+    else:
+        print("=)")
     await ctx.send("_____________")
 
 @bot.group()
