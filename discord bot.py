@@ -83,4 +83,4 @@ async def roll_dice(ctx):
 async def help_(ctx):
     await ctx.send(f'`avalible commands: !roll_dice, !roll, !mem, !music, !cool, !choose, !hello, !add(ex:''!add 2 3'' or any number you want)`')
 
-bot.run("MTE0NDcxNjY2NDExODcxODU1NA.GTqHKS.1jWjfBGWe6ec5p0XleGWjtYjkGccvLFCl_Dfow")
+bot.run("[insert token]")
