@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import requests
 
 import random
 import os
@@ -80,7 +81,28 @@ async def roll_dice(ctx):
     await ctx.send(file=picture)   
 
 @bot.command()
-async def help_(ctx):
-    await ctx.send(f'`avalible commands: !roll_dice, !roll, !mem, !music, !cool, !choose, !hello, !add(ex:''!add 2 3'' or any number you want)`')
+async def tema(ctx):
+    await ctx.send(f'https://www.tema.org.tr/')
+    
+@bot.command()
+async def sifiratik(ctx):
+    await ctx.send(f'https://sifiratik.gov.tr/')
 
-bot.run("[insert token]")
+def get_duck_image_url():    
+    url = 'https://random-d.uk/api/random'
+    res = requests.get(url)
+    data = res.json()
+    return data['url']
+
+@bot.command('duck')
+async def duck(ctx):
+    '''duck komutunu çağırdığımızda, program ordek_resmi_urlsi_al fonksiyonunu çağırır.'''
+    image_url = get_duck_image_url()
+    await ctx.send(image_url)
+
+@bot.command()
+async def help_(ctx):
+    await ctx.send(f'avalible commands: !roll_dice, !roll, !mem, !music, !cool, !choose, !hello, !tema, !sifiratik, !add(ex:''!add 2 3'' or any number you want)')
+        
+        
+bot.run([insert token])
